@@ -1,0 +1,468 @@
+/* start the main rules of the website */
+
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+/* end the main rules of the website */
+
+/* start varibles */
+
+:root{
+  --main-color: #067ECE;
+  --text-color: #484848;
+  --back-hover-color: #1E7DC5;
+  --secondary-color: #EBEBEB;
+  --duration: 0.5s
+}
+
+/* end variables */
+
+/* start the main components of the website */
+
+.container{
+  margin: 0 auto;
+  padding: 0 20px
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+.btn{background-color: var(--main-color)}
+
+.btn a{color: #fff}
+
+.btn, .btn-white{
+  display: block;
+  padding: 10px;
+  width: 150px;
+  height: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--duration)
+}
+
+.btn a, .btn-white a{
+  display: block;
+  text-align: center;
+  line-height: 20px
+}
+
+.btn-white{background-color: #fff}
+
+.btn-white a{color: var(--main-color)}
+
+.btn:hover{background-color: #fff;}
+
+.btn:hover a{color: var(--main-color)}
+
+.image{
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+  margin: auto
+}
+
+.image img{
+  width: 100%;
+  height: 40vh;
+  transition: var(--duration)
+}
+
+.image:hover img{
+  transform: rotate(8deg) scale(1.35);
+}
+
+.image .overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #1e7dc585;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: var(--duration) ease;
+  opacity: 0;
+}
+
+.image:hover .overlay{opacity: 1}
+
+.image .overlay .text{text-align: center;}
+
+.image .overlay i{
+  font-size: 5rem;
+  margin-bottom: 10px;
+  color: #fff
+}
+
+/* end the main component of the website */
+
+/* start the navigation bar of the website */
+
+nav{height: 100px}
+
+nav .container{
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+nav .container .logo{
+  width:80px;
+  height: 80px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-column-gap: 10px
+}
+
+nav .container .logo img{
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+}
+
+nav .container .logo h3{
+  white-space: nowrap;
+  align-self: center;
+  color: var(--main-color);
+}
+
+nav .container .links{
+  justify-self: flex-start;
+  align-self: center;
+}
+
+nav .container .links ul{
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  grid-column-gap: 20px
+}
+
+nav .container .links ul li a{
+  text-transform: capitalize;
+  color: var(--text-color);
+  transition-duration: var(--duration)
+}
+
+nav .container .links ul li a:hover{
+  color: var(--back-hover-color)
+}
+
+/*we will edit the form of the links at maxuim at 667px*/
+
+@media (max-width: 667px) {
+  nav .container .links{
+    justify-content: space-evenly;
+    justify-self: flex-end;
+  }
+
+  nav .container .links .content-sign{
+    margin: 30px 40px;
+  }
+
+  nav .container .links div{
+    height: 3px;
+    background-color: var(--text-color)
+  }
+
+  nav .container .links div:nth-of-type(odd){
+    width: 40px;
+  }
+
+  nav .container .links div:nth-of-type(even){
+    width: 20px
+  }
+
+  nav .container .links div:not(:last-child){margin-bottom: 5px}
+
+  nav .container .links:hover ul{
+    opacity: 1;
+  }
+
+  nav .container .links ul{
+    grid-template-rows: repeat(5, auto);
+    grid-template-columns: auto;
+    position: relative;
+    top: 25px;
+    background-color: var(--main-color);
+    width: 120px;
+    border-radius: 5px;
+    opacity: 0;
+  }
+
+  nav .container .links ul::before{
+    content: "";
+    border-style: solid;
+    border-color: transparent transparent var(--back-hover-color) transparent;
+    border-width: 10px;
+    position: absolute;
+    top: -20px;
+    left: 60px;
+  }
+
+  nav .container .links ul li{
+    padding: 10px;
+    transition: var(--duration)
+  }
+
+  nav .container .links ul li:not(:last-child){
+    border-bottom: 2px solid #0a95ff
+  }
+
+  nav .container .links ul li a{color: #fff}
+
+  nav .container .links ul li:hover{background-color: #fff}
+
+  nav .container .links ul li:hover a{color: var(--main-color); padding-left: 5px;}
+
+}
+
+/* end the navigation bar of the website */
+
+/* start the overview of the website */
+
+.overview{
+  width: 100%;
+  height: calc(100vh - 100px);
+  background-image: url("../images/overview.png");
+  background-size: cover;
+}
+
+@media (max-width: 667px) {
+  .overview{height: calc(50vh - 100px)}
+}
+
+/* end the overview of the website */
+
+/* start about */
+
+.about{
+  background-color: var(--secondary-color);
+  height: 80vh
+}
+
+.about .container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-column-gap: 100px
+}
+
+.about .container .image{
+  height: 70vh;
+  width: 80%;
+}
+
+.about .container .image img{
+  height: 100%;
+  width: 100%
+}
+
+.about .container .description{
+  padding: 120px 0;
+}
+
+.about .container .description p{
+  color: var(--text-color);
+  line-height: 1.7;
+  margin-bottom: 65px;
+}
+
+/* end tutorials of the website */
+
+@media (max-width: 667px) {
+
+  .about{height: 175vh}
+
+  .about .container .image{
+    justify-self: center;
+    margin-top: 120px;
+  }
+  .about .container .description p{text-align: center;}
+
+  .about .container .description .btn{margin: 0 auto}
+}
+
+/* end about */
+
+/* start tutorials of the website */
+
+.tutorials .container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-column-gap: 30px;
+  padding: 60px;
+}
+
+.tutorials .container .tut{
+  display: flex;
+  flex-direction: column;
+  background-color: #EEE;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tutorials .container .tut .image .overlay i{
+  font-size: 5rem;
+  margin-bottom: 10px;
+  color: #fff
+}
+
+.tutorials .container .tut .image + div{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.tutorials .container .tut .image + div .btn{
+  margin: 20px 0;
+}
+
+/* end tutorails */
+
+/* start portoflio */
+
+.portoflio .container{
+  display: flex;
+  flex-direction: column;
+}
+
+.portoflio .container .head{
+  justify-content: center;
+  align-self: center;
+  font-size: 2rem;
+  color: var(--text-color)
+}
+
+.portoflio .container .protoflio-content{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px
+}
+
+.portoflio .container .portoflio-content img{
+  width: 100%;
+  height: 100%;
+}
+
+/* end portoflio */
+
+/* start story */
+
+.story{
+  padding:130px 0
+}
+
+.story .students{background-color: var(--secondary-color);margin-bottom: 120px}
+
+.story .students,
+.story .teachers{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  grid-column-gap: 50px;
+}
+
+.story .students .image-state img,
+.story .teachers .image-state img{
+  width: 100%;
+  height: 100%;
+}
+
+.story .students .description,
+.story .teachers .description{padding: 100px 0}
+
+.story .students .description p,
+.story .teachers .description p{
+  color: var(--text-color);
+  line-height: 1.5;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.story .students .description .btn,
+.story .teachers .description .btn{margin: 0 auto}
+
+/* end story */
+
+/* start contact and footer */
+
+footer{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main-color);
+  padding: 50px 0;
+  height: 160px;
+}
+
+footer .container .contact h2{
+  font-size: 1.8rem;
+  color: #fff;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+footer .container .contact h2 a{color: #fff;font-size: 2.3rem;text-decoration: underline;}
+
+footer .container .footer p{
+  text-align: center;
+  text-transform: capitalize;
+  color: #fff;
+  margin: 30px auto;
+  width: 500px;
+}
+
+footer .container .footer p i{
+  color: #da1e0b;
+  transition: var(--duration);
+  animation: heart-bumb .8s linear infinite alternate
+}
+
+@keyframes heart-bumb {
+  from{
+    font-size: 15px;
+  }
+  to{
+    font-size: 20px
+  }
+
+}
+
+/* end contact and footer */
