@@ -191,7 +191,11 @@ nav .container .links ul li a:hover{
 @media (max-width: 667px) {
 
   nav .container{
-    grid-template-columns: 80% 20%;
+    grid-template-columns: repeat(2, auto);
+  }
+
+  nav .container h3{
+    display: none;
   }
 
   nav .container .links{
