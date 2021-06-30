@@ -9,7 +9,6 @@ body{
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
-  overflow-x: hidden;
 }
 
 ul{
@@ -190,11 +189,11 @@ nav .container .links ul li a:hover{
 /*we will edit the form of the links at maxuim at 667px*/
 
 @media (max-width: 667px) {
-  
+
   nav .container{
     grid-template-columns: 80% 20%;
   }
-  
+
   nav .container .links{
     justify-content: space-evenly;
     justify-self: flex-end;
