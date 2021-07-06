@@ -9,7 +9,7 @@ body{
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
-  max-width: fit-content;
+  min-width: fit-content;
   overflow-x: hidden;
 }
 
