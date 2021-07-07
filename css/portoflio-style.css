@@ -1,24 +1,25 @@
-/* .portoflio .container .head{
-  justify-content: center;
-  align-self: center;
-  font-size: 2rem;
-  color: var(--text-color)
-}
-
-.portoflio .container .protoflio-content{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 20px
-}
-
-.portoflio .container .portoflio-content img{
-  width: 100%;
-  height: 100%;
-} */
 .portoflio .container .head{
   display: flex;
   justify-content: center;
   align-self: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  color: var(--text-color)
+}
+
+.portoflio .container .protoflio-content{
+  display: flex;
+  flex-direction: column;
+}
+
+.portoflio .container .protoflio-content .session-images,
+.portoflio .container .protoflio-content .posts-images{
+  display: flex;
+  flex-direction: column;
+}
+
+.portoflio .container .portoflio-content .session-images h3{
+  justify-self: center;
+  align-self: center;
+  font-size: 1rem;
   color: var(--text-color)
 }
