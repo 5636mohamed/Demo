@@ -375,22 +375,14 @@ nav .container .links ul li a:hover{
   flex-direction: column;
 }
 
-.portoflio .container .head{
-  justify-content: center;
+.portoflio .container p{
   align-self: center;
-  font-size: 2rem;
-  color: var(--text-color)
+  text-align: center;
+  color: var(--text-color);
 }
 
-.portoflio .container .protoflio-content{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 20px
-}
-
-.portoflio .container .portoflio-content img{
-  width: 100%;
-  height: 100%;
+.portoflio .container p + .btn{
+  margin: 1.5rem auto;
 }
 
 /* end portoflio */
